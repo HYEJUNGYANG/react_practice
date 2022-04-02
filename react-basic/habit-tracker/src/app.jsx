@@ -32,6 +32,19 @@ class App extends Component {
         this.setState({ habits });
     };
 
+    handleAdd = (name) => {
+        const habits = [
+            ...this.state.habits,
+            { id: Date.now(), name, count: 0 },
+        ];
+        this.setState({ habits });
+
+        // const length = this.state.habits.length;
+        // this.state.habits.push({ id: length + 1, name: name, count: 0 });
+        // const habits = [...this.state.habits];
+        // this.setState({ habits });
+    };
+
     // const name = undefined;
     // class="" (x) -> className =""
     // onclick="" (x) -> onClick (대문자)
@@ -61,6 +74,7 @@ class App extends Component {
                     onIncrement={this.handleIncrement}
                     onDecrement={this.handleDecrement}
                     onDelete={this.handleDelete}
+                    onAdd={this.handleAdd}
                 />
             </>
         );
