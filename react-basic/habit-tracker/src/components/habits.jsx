@@ -9,17 +9,25 @@ class Habits extends Component {
             { id: 3, name: 'Coding', count: 0 },
         ],
     };
-
+    // 직접적으로 state의 배열 값을 수정하면 좋지 않음
     handleIncrement = (habit) => {
-        console.log(`handleIncrement ${habit.name}`);
+        const habits = [...this.state.habits];
+        const index = habits.indexOf(habit);
+        habits[index].count++; // 💩
+        this.setState({ habits }); // habits: habits의 축약버전
     };
 
     handleDecrement = (habit) => {
-        console.log(`handleDecrement ${habit.name}`);
+        const habits = [...this.state.habits];
+        const index = habits.indexOf(habit);
+        const count = habits[index].count - 1;
+        habits[index].count = count < 0 ? 0 : count; // 💩
+        this.setState({ habits });
     };
 
     handleDelete = (habit) => {
-        console.log(`handleDelete ${habit.name}`);
+        const habits = this.state.habits.filter((item) => item.id !== habit.id);
+        this.setState({ habits });
     };
 
     render() {
