@@ -1,6 +1,6 @@
 import React from 'react';
 import './app.css';
-import Habit from './components/habit';
+import Habits from './components/habits';
 
 function App() {
     const name = undefined;
@@ -18,7 +18,7 @@ function App() {
     //     </React.Fragment>
     // );
 
-    return <Habit />;
+    return <Habits />;
 }
 
 export default App;
