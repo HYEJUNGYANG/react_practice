@@ -13,7 +13,6 @@ export default class HabitAddForm extends PureComponent {
     };
 
     render() {
-        console.log('habitAddForm');
         return (
             <form
                 ref={this.formRef}

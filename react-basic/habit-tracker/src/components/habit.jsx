@@ -1,6 +1,16 @@
 import React, { PureComponent } from 'react';
 
 export default class Habit extends PureComponent {
+    // 타이머를 시작할 때, 실시간 채팅 대화가 이루어진다면 소켓이나 이런 것들을 초기화할 때 등
+    componentDidMount() {
+        console.log(`habit: ${this.props.habit.name} mounted`);
+    }
+
+    // 타이머를 중지할 때, 정리하고 리소스를 지우고 하는 것 등
+    componentWillUnmount() {
+        console.log(`habit: ${this.props.habit.name} will unmounted`);
+    }
+
     handleIncrement = () => {
         this.props.onIncrement(this.props.habit);
     };
@@ -15,7 +25,6 @@ export default class Habit extends PureComponent {
 
     render() {
         const { name, count } = this.props.habit;
-        console.log(`habit: ${name}`);
         return (
             <li className="habit">
                 <span className="habit-name">{name}</span>
