@@ -10,8 +10,8 @@ ReactDOM.render(
     //   -> 엄격모드
     // app.jsx에 정의된 컴포넌트
     <React.StrictMode>
-        {/* <App /> */}
-        <SimpleHabit />
+        <App />
+        {/* <SimpleHabit /> */}
     </React.StrictMode>,
     document.getElementById('root') // index.html에 있는 id='root'인 div에 연결
 );
