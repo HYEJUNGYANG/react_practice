@@ -1,7 +1,7 @@
 # Habit-Tracker
 <a href="https://react-practice-habit-tracker.netlify.app/" target="_blank">Habit-Tracker 사이트</a>
 
-css는 신경쓰지 않은 react 
+css는 신경쓰지 않은 react 연습용
 
 # Getting Started with Create React App
 
