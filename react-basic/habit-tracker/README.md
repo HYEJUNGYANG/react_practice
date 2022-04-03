@@ -1,5 +1,5 @@
 # Habit-Tracker
-<a href="https://62495122a9aa2358bbf44d0e--react-practice-habit-tracker.netlify.app/" target="_blank">Habit-Tracker 사이트</a>
+<a href="https://react-practice-habit-tracker.netlify.app/" target="_blank">Habit-Tracker 사이트</a>
 
 # Getting Started with Create React App
 
