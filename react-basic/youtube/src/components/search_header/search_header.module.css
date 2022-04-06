@@ -28,3 +28,13 @@
     height: 100%;
     padding: 0.5em 0.2em;
 }
+
+@media screen and (max-width: 48rem) {
+    .header {
+        max-width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+}
