@@ -57,6 +57,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
                 ref={themeRef}
                 name="theme"
                 value={theme}
+                onChange={onChange}
             >
                 <option value="light">light</option>
                 <option value="dark">dark</option>

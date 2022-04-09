@@ -29,15 +29,21 @@ const Login = ({ authService }) => {
         <section className={styles.login}>
             <Header />
             <section>
-                <h1>Login</h1>
+                <h1 className={styles.font}>Login</h1>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <button className={styles.button} onClick={onLogin}>
+                        <button
+                            className={`${styles.button} ${styles.font}`}
+                            onClick={onLogin}
+                        >
                             Google
                         </button>
                     </li>
                     <li className={styles.item}>
-                        <button className={styles.button} onClick={onLogin}>
+                        <button
+                            className={`${styles.button} ${styles.font}`}
+                            onClick={onLogin}
+                        >
                             Github
                         </button>
                     </li>

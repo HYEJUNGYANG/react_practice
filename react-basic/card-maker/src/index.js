@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './index.module.css';
 import App from './app';
 import AuthService from './service/auth_service';
 import ImageUploader from './service/image_uploader';
@@ -24,3 +23,19 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+// function AppWithCallbackAfterRender() {
+//     return (
+//         <React.StrictMode>
+//             <App
+//                 authService={authService}
+//                 FileInput={FileInput}
+//                 cardRepository={cardRepository}
+//             />
+//         </React.StrictMode>
+//     );
+// }
+
+// const container = document.getElementById('root');
+// const root = ReactDOM.createRoot(container);
+// root.render(<AppWithCallbackAfterRender />);

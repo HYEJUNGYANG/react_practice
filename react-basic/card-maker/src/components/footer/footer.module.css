@@ -1,4 +1,5 @@
 @value makerGreen, makerWhite from '../../common/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 .footer {
     width: 100%;
@@ -8,4 +9,6 @@
 
 .title {
     color: makerWhite;
+    font-family: 'Audiowide', cursive;
+    font-size: 1.2rem;
 }

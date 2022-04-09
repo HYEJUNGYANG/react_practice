@@ -27,7 +27,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
             setCards(cards);
         });
         return () => stopSync();
-    }, [userId]);
+    }, [userId, cardRepository]);
 
     // 로그인 관련 useEffect()
     useEffect(() => {
@@ -38,7 +38,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
                 history.push('/');
             }
         });
-    });
+    }, [authService, userId, history]);
 
     const createOrUpdateCard = (card) => {
         // setCards를 부를 때, 바로 이 시점에 cards의 상태를 그대로 복사해와서
