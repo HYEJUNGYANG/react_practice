@@ -6,42 +6,11 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ FileInput, authService }) => {
-    const [cards, setCards] = useState({
-        1: {
-            id: '1',
-            name: 'Jung',
-            company: 'none',
-            theme: 'light',
-            title: 'Software Engineer',
-            email: 'jung@naver.com',
-            message: 'go for it',
-            fileName: 'jung',
-            fileURL: null,
-        },
-        2: {
-            id: '2',
-            name: 'Jung',
-            company: 'none',
-            theme: 'dark',
-            title: 'Software Engineer',
-            email: 'jung@naver.com',
-            message: 'go for it',
-            fileName: 'jung',
-            fileURL: null,
-        },
-        3: {
-            id: '3',
-            name: 'Jung',
-            company: 'none',
-            theme: 'colorful',
-            title: 'Software Engineer',
-            email: 'jung@naver.com',
-            message: 'go for it',
-            fileName: 'jung',
-            fileURL: null,
-        },
-    });
+const Maker = ({ FileInput, authService, cardRepository }) => {
+    const historyState = useHistory().state;
+    const [cards, setCards] = useState({});
+
+    const [userId, setUserId] = useState(historyState && historyState.id);
 
     const history = useHistory();
     const onLogout = () => {
@@ -52,7 +21,9 @@ const Maker = ({ FileInput, authService }) => {
 
     useEffect(() => {
         authService.onAuthChange((user) => {
-            if (!user) {
+            if (user) {
+                setUserId(user.uid);
+            } else {
                 history.push('/');
             }
         });
@@ -68,6 +39,7 @@ const Maker = ({ FileInput, authService }) => {
             updated[card.id] = card;
             return updated;
         });
+        cardRepository.saveCard(userId, card);
     };
 
     const deleteCard = (card) => {
@@ -76,6 +48,7 @@ const Maker = ({ FileInput, authService }) => {
             delete updated[card.id];
             return updated;
         });
+        cardRepository.removeCard(userId, card);
     };
 
     return (
